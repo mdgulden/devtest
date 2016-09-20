@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Article</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container">
+		<header>
+			<div class="subtitle">SubTitle</div>
+			<h1>Title of the Section</h1>
+			<figure class="large-image-container">
+				<img src="https://github.com/mdgulden/devtest/blob/master/images/photo01.jpg?raw=true" alt="Title for photo01" class="img-responsive large-image">
+				<figcaption class="figure-caption title">Title for photo01</figcaption>
+				<figcaption class="figure-caption">Caption for Video</figcaption>
+				<figcaption class="small-images">
+					<div class="small-image col-sm-2"><img src="https://github.com/mdgulden/devtest/blob/master/images/photo02.jpg?raw=true" alt="Title for photo02" class="img-responsive"></div>
+					<div class="small-image col-sm-2"><img src="https://github.com/mdgulden/devtest/blob/master/images/photo03.jpg?raw=true" alt="Title for photo03" class="img-responsive"></div>
+				</figcaption>
+				<div class="clearfix"></div>
+			</figure>
+		</header>
+
+		<p>Lorem ipsum dolor sit amet, sed purus ipsum qui, neque non tellus erat scelerisque rutrum, nibh pede etiam turpis sed. Suspendisse in eros consequat convallis, justo libero nunc pharetra quam, felis lorem sed lacinia, arcu inceptos integer eget odio. Massa vivamus vestibulum scelerisque auctor et. Quam est tincidunt elit nulla, pede arcu, aliquam vitae non cum. Vitae dignissim ipsum netus phasellus integer tempor. Dignissim blandit pede semper nullam eros luctus, at urna magna enim est nibh tristique. Luctus tortor sit ante, vitae massa nunc molestie sed dui, at ligula, aptent et.</p>
+		<div class="margin-left col-sm-6">
+			<p>Est mauris, eros est amet cras, purus nec velit amet rhoncus, suscipit placerat ac condimentum. Orci eleifend feugiat pretium bibendum, quam metus, cursus urna urna, phasellus vivamus. Id spendisse, et morbi dolor odio fusce wisi sem, mauris leo dui a nisl elit nec. Cras sapien vestibulum porttitor, lacus eu congue nunc integer. Malesuada pellentesque gravida libero nec convallis. Aliquam pede morbi.</p>
+			<p>Ante bibendum ac ac, placerat curabitur. Vitae sollicitudin ornare at vitae odio. Fusce ut natus nibh. Vel nulla sociis ut dolor at dignissim. Arcu pharetra auctor, vel et, vestibulum ullamcorper. Ultrices nulla amet tempus scelerisque, tincidunt laoreet vestibulum, tortor natoque elit pulvinar parturient quibusdam. Tincidunt sed.</p>
+		</div>
+		<div class="col-sm-6">
+		 	<figure>
+			 	<div class="embed-responsive embed-responsive-16by9">
+					<iframe class="mbed-responsive-item" src="https://www.youtube.com/embed/MhkGQAoc7bc" frameborder="0" allowfullscreen></iframe>
+				</div>
+				<figcaption class="figure-caption title">Title for Video</figcaption>
+				<figcaption class="figure-caption">Video caption for some stuff</figcaption>
+				<figcaption class="figure-caption"><hr></figcaption>
+			</figure>
+		</div>
+		<div class="clearfix"></div>
+		<p>Nullam porttitor quis nulla blandit phasellus, sint pede ligula leo ante eu, vestibulum et cras dui nunc odio, consequat enim gravida non duis eget pretium. Id cras, odio morbi neque, elit ipsum egestas in wisi. Aliquam commodo felis porta nec enim metus, porttitor lectus libero justo, in lorem, sed sit ante sed. Class magnis faucibus sed sit neque, sed nisl purus dui aliquam, ab quis ultricies, dui fermentum a nisl pellentesque sollicitudin ut, duis non lectus dolor odio mi.</p>
+
+		<h2>Sub-Heading</h2>
+		<p>Dolor urna. Gravida risus id dolor, vel neque mollis etiam pharetra aliquam. Nibh vestibulum nec erat mattis, facilisi wisi purus libero laoreet justo a, nulla mauris elementum. Nec qui, nonummy suscipit congue integer eu nec non, in eu faucibus justo eleifend. A consectetuer congue quam commodo vel pellentesque. Wisi urna, gestas neque soluta at, aliquam nec. Temporibus mauris, ac nibh ultricies feugiat et congue justo. Venenatis suscipit, luctus dictum proin.</p>
+		<p>Nullam porttitor quis nulla blandit phasellus, sint pede ligula leo ante eu, vestibulum et cras dui nunc odio, consequat enim gravida non duis eget pretium. Id cras, odio morbi neque, elit ipsum egestas in wisi. Aliquam commodo felis porta nec enim metus, porttitor lectus libero justo, in lorem, sed sit ante sed. Class magnis faucibus sed sit neque, sed nisl purus dui aliquam, ab quis ultricies, dui fermentum a nisl pellentesque sollicitudin ut, duis non lectus dolor odio mi.</p>
+		<p>Vestibulum lectus arcu elit quam vel, maxime rhoncus vestibulum, maxime dapibus curabitur, mauris vitae semper vel nullam urna sem, vel tempus orci. Ut diam mattis consequat, wisi aliquam, mauris eros parturient, vitae non tellus cras, ac taciti morbi aliquet ipsum suspendisse.</p>
+	</div>
+</body>
+<script>
+	$(function() {
+		$(".small-image img").click(function() {
+			var small_src = $(this).attr("src");
+			var small_alt = $(this).attr("alt");
+			var large_src = $("img.img-responsive.large-image").attr("src");
+			var large_alt = $("img.img-responsive.large-image").attr("alt");
+			
+			$("img.img-responsive.large-image").attr("src", small_src);
+			$("img.img-responsive.large-image").attr("alt", small_alt);
+			
+			
+			$(this).attr("src", large_src);
+			$(this).attr("alt", large_alt);
+
+			$(".large-image-container figcaption.title").text(small_alt);
+
+		});
+	});
+</script>
+</html>

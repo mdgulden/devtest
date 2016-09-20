@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Tiles</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container masonry">
+		<div class="tiles">
+			<div class="tile col-sm-5">
+				<div class="rectangle"></div>
+				<div class="tile-heading">Gravida risus dolor</div>
+				<p>Lorem ipsum dolor sit amet, sed purus ipsum qui, neque non tellu, justo libero nunc pharetra quam, felis lorem sed lacinia, arcu inceptos integer eget odio. Massa vivamus vestibulum scelerisque auctor et.</p>
+				<p>Vestibulum lectus.</p>
+			</div>
+			<div class="col-sm-1"></div>
+			<div class="tile col-sm-5">
+				<div class="part-red"></div>
+				<div class="rectangle"></div>
+				<div class="tile-heading">Gravida risus dolor lorem qui</div>
+				<p>Lorem ipsum dolor sit amet, sed purus ipsum qui, neque non tellu, justo libero nunc pharetra quam, felis lorem sed lacinia, arcu inceptos integer eget odio. Massa vivamus vestibulum scelerisque auctor et felis lorem sed lacinia, arcu inceptos.</p>
+				<p>Vestibulum lectus.</p>
+			</div>
+			<div class="clearfix"></div>
+			<div class="end"></div>
+		</div>
+		<button class="button">Load More</button>
+	</div>
+</body>
+<script>
+	$(function() {
+		$(".button").click(function() {
+			var tiles =  $(".tiles").clone();
+			$(tiles).insertAfter(".tiles");
+			$(tiles).insertAfter(".tiles");
+			$(this).hide();
+		});
+	});
+</script>
+</html>
