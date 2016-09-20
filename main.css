@@ -99,6 +99,9 @@ p {
 	background-color: #fff;
 	border: solid 1px;
 	padding: 18px;
+	margin-top: 36px;
+	margin-right: 36px;
+	margin-left: 36px;
 }
 
 .masonry {

@@ -10,21 +10,7 @@
 <body>
 	<div class="container masonry">
 		<div class="tiles">
-			<div class="tile col-sm-5">
-				<div class="rectangle"></div>
-				<div class="tile-heading">Gravida risus dolor</div>
-				<p>Lorem ipsum dolor sit amet, sed purus ipsum qui, neque non tellu, justo libero nunc pharetra quam, felis lorem sed lacinia, arcu inceptos integer eget odio. Massa vivamus vestibulum scelerisque auctor et.</p>
-				<p>Vestibulum lectus.</p>
-			</div>
-			<div class="col-sm-1"></div>
-			<div class="tile col-sm-5">
-				<div class="part-red"></div>
-				<div class="rectangle"></div>
-				<div class="tile-heading">Gravida risus dolor lorem qui</div>
-				<p>Lorem ipsum dolor sit amet, sed purus ipsum qui, neque non tellu, justo libero nunc pharetra quam, felis lorem sed lacinia, arcu inceptos integer eget odio. Massa vivamus vestibulum scelerisque auctor et felis lorem sed lacinia, arcu inceptos.</p>
-				<p>Vestibulum lectus.</p>
-			</div>
-			<div class="clearfix"></div>
+			<div class="content clearfix"></div>
 			<div class="end"></div>
 		</div>
 		<button class="button">Load More</button>
@@ -32,12 +18,36 @@
 </body>
 <script>
 	$(function() {
+		var num = 4;
+		getTiles(num);
+		var json = [];
 		$(".button").click(function() {
-			var tiles =  $(".tiles").clone();
-			$(tiles).insertAfter(".tiles");
-			$(tiles).insertAfter(".tiles");
+			getTiles(num + 4);
 			$(this).hide();
 		});
+
+		function getTiles(num) {
+			$.getJSON( "masonry_tiles.json", function(data) {
+				var tiles = [];
+				var image = "";
+				var image_exists = false;
+				var initial = 0;
+				if (num > 4) { initial = 5;}
+				for (var i = initial; i <= num; i++) {
+					$.each(data, function(key, val) {
+						if (val[i].image != "") {
+							//<img src=" + val[i].image + "/>
+							image = "<div class='rectangle'></div>";
+						} else {
+							image =	"<div class='part-red'></div>";
+						}
+						var tile = "<div class='tile col-sm-5'>" + image + "<div class='tile-heading'>" + val[i].heading + "</div><p>" + val[i].content + "</p><p>"+val[i].meta+"</p></div>";	
+						$(tile).insertBefore(".content");
+						tiles.push(tile);
+					});
+				}
+			});
+		}
 	});
 </script>
 </html>
